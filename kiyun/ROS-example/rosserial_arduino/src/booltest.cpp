@@ -3,7 +3,7 @@
 #include <iostream>
 
 void boolcallback(const std_msgs::Bool::ConstPtr& msg) {
-  ROS_INFO("");
+  ROS_INFO("Received : [%s]", msg->data ? "true" : "false");
 }
 
 int main(int argc, char** argv) {
