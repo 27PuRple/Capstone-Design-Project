@@ -1,0 +1,32 @@
+include mixins/orderListBlock
+
+<!DOCTYPE html>
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU", crossorigin="anonymous")
+        title #{pageTitle} | #{siteName}
+        link(rel = "stylesheet", href="/static/styles.css")
+    body
+        header.header
+            .header__wrapper
+                .header__column
+                    p 주문현황
+        main
+            p 주문현황
+            .order__reload__btn
+                button(onclick='window.location.reload()')
+                    a 새로고침
+            .ordered-items
+                each order in orders
+                    +orderListBlock({
+                        tableNum: order.table_num,
+                        orderNum:order.order_num,
+                        totalPrice:order.totalPrice,
+                        orderTime:order.createdAt
+                    })
+        footer.footer
+            .footer__icon
+                i.fas.fa-concierge-bell
+            span.footer__text #{siteName} #{new Date().getFullYear()} &copy;

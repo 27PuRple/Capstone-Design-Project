@@ -1,0 +1,25 @@
+include mixins/cartListBlock
+
+<!DOCTYPE html>
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU", crossorigin="anonymous")
+        title #{pageTitle} | #{siteName}
+    body
+        header.header
+            .header__wrapper
+                .header__column
+                    a(href="javascript:history.back();")
+                        i.fas.fa-arrow-left
+                .header__column
+                    p 장바구니
+        main
+            p 장바구니 페이지
+            .cart-items
+                p 텅텅 비었습니다~!
+        footer.footer
+            .footer__icon
+                i.fas.fa-concierge-bell
+            span.footer__text #{siteName} #{new Date().getFullYear()} &copy;

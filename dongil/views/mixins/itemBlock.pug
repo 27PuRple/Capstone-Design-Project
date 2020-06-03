@@ -1,0 +1,6 @@
+mixin itemBlock(item = {})
+    .itemBlock
+        a(href=routes.menuDetail(item.id))
+            img.itemoBlock__thumbnail(src=item.imageFile)
+            h4.itemBlock__itemName=item.itemName
+            h3.itemBlock__itemPrice=item.itemPrice 

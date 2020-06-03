@@ -1,0 +1,35 @@
+include mixins/itemBlock
+
+<!DOCTYPE html>
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU", crossorigin="anonymous")
+        title #{pageTitle} | #{siteName}
+    body
+        header.header
+            .header__wrapper
+                .header__column
+                    a(href=routes.home)
+                        i.fas.fa-arrow-left
+                .header__column
+                    p table#{tableId}
+                .header__column
+                    a(href=`/order${routes.cart}`)
+                        i.fas.fa-shopping-basket
+        main
+            p #{tableId}번 테이블
+            p 주문페이지
+            .home-items
+                each item in items 
+                    +itemBlock({
+                        id:item.id,
+                        itemName:item.itemName,
+                        itemPrice:item.itemPrice,
+                        imageFile:item.itemUrl
+                    })
+        footer.footer
+            .footer__icon
+                i.fas.fa-concierge-bell
+            span.footer__text #{siteName} #{new Date().getFullYear()} &copy;

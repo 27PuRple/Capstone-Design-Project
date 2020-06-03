@@ -1,0 +1,6 @@
+mixin orderListBlock(order = {})
+    .odrdersBlock
+        h3.odrdersBlock__tableNum #{order.tableNum} 번 테이블
+        h3.odrdersBlock__orderNum 주문번호 #{order.orderNum} 번
+        h3.odrdersBlock__totalPrice 총 주문금액 #{order.totalPrice} 원
+        h3.odrdersBlock__orderTime 주문시간 #{new Date(order.orderTime).getFullYear()}/#{new Date(order.orderTime).getMonth() + 1}/#{new Date(order.orderTime).getDate()} #{new Date(order.orderTime).getHours()}:#{new Date(order.orderTime).getMinutes()}
